@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCastCollectionViewCell" id="gTV-IL-0wX" customClass="MovieCastCollectionViewCell" customModule="The10_Mauldin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="175" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="175" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JOV-TS-egP">
+                        <rect key="frame" x="44" y="22.5" width="87.5" height="75"/>
+                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvj-SL-BPx">
+                        <rect key="frame" x="22" y="109" width="131" height="20.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Rosario Valdez">
+                                <attributes>
+                                    <font key="NSFont" metaFont="system" size="17"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="JOV-TS-egP" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" multiplier="0.8" id="52L-BK-i0I"/>
+                <constraint firstItem="JOV-TS-egP" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.5" id="Bi9-oB-FqO"/>
+                <constraint firstItem="gvj-SL-BPx" firstAttribute="width" secondItem="JOV-TS-egP" secondAttribute="width" multiplier="1.5" id="Kcm-Sf-VG1"/>
+                <constraint firstItem="gvj-SL-BPx" firstAttribute="centerX" secondItem="JOV-TS-egP" secondAttribute="centerX" id="MtJ-O3-MBe"/>
+                <constraint firstItem="JOV-TS-egP" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.5" id="O4H-d3-X0D"/>
+                <constraint firstItem="JOV-TS-egP" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="fIK-pF-cRj"/>
+                <constraint firstItem="gvj-SL-BPx" firstAttribute="top" secondItem="JOV-TS-egP" secondAttribute="bottom" constant="11.5" id="gYB-6i-M6H"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="actorImage" destination="JOV-TS-egP" id="OOI-VI-JSY"/>
+                <outlet property="actorName" destination="gvj-SL-BPx" id="A5l-7t-2hm"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
