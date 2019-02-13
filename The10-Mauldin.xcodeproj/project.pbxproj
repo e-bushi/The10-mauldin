@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F6CC01B92213A80200062305 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01B82213A80200062305 /* AppDelegate.swift */; };
+		F6CC01BB2213A80200062305 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01BA2213A80200062305 /* ViewController.swift */; };
+		F6CC01BE2213A80200062305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6CC01BC2213A80200062305 /* Main.storyboard */; };
+		F6CC01C12213A80200062305 /* The10_Mauldin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01BF2213A80200062305 /* The10_Mauldin.xcdatamodeld */; };
+		F6CC01C32213A80500062305 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6CC01C22213A80500062305 /* Assets.xcassets */; };
+		F6CC01C62213A80500062305 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6CC01C42213A80500062305 /* LaunchScreen.storyboard */; };
+		F6CC01D12213A80600062305 /* The10_MauldinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01D02213A80600062305 /* The10_MauldinTests.swift */; };
+		F6CC01DD2213A84900062305 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01DC2213A84900062305 /* Movie.swift */; };
+		F6CC01E52213AE4B00062305 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01E42213AE4B00062305 /* Credits.swift */; };
+		F6CC01E62213AE4B00062305 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01E42213AE4B00062305 /* Credits.swift */; };
+		F6CC01EA2213B39D00062305 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CC01E92213B39D00062305 /* Moya.framework */; };
+		F6CC01EC2213B3A300062305 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CC01EB2213B3A300062305 /* Result.framework */; };
+		F6CC01EE2213B3B100062305 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CC01ED2213B3B100062305 /* Alamofire.framework */; };
+		F6CC01F02213B3C800062305 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CC01EF2213B3C800062305 /* RxSwift.framework */; };
+		F6CC01F42213B4DF00062305 /* TheMovieDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01F32213B4DF00062305 /* TheMovieDBService.swift */; };
+		F6CC01F52213B4DF00062305 /* TheMovieDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01F32213B4DF00062305 /* TheMovieDBService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F6CC01CD2213A80600062305 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6CC01AD2213A80200062305 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6CC01B42213A80200062305;
+			remoteInfo = "The10-Mauldin";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F6CC01B52213A80200062305 /* The10-Mauldin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The10-Mauldin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6CC01B82213A80200062305 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F6CC01BA2213A80200062305 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F6CC01BD2213A80200062305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6CC01C02213A80200062305 /* The10_Mauldin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = The10_Mauldin.xcdatamodel; sourceTree = "<group>"; };
+		F6CC01C22213A80500062305 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F6CC01C52213A80500062305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F6CC01C72213A80500062305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6CC01CC2213A80600062305 /* The10-MauldinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The10-MauldinTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6CC01D02213A80600062305 /* The10_MauldinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The10_MauldinTests.swift; sourceTree = "<group>"; };
+		F6CC01D22213A80600062305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6CC01DC2213A84900062305 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		F6CC01E42213AE4B00062305 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
+		F6CC01E92213B39D00062305 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		F6CC01EB2213B3A300062305 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		F6CC01ED2213B3B100062305 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		F6CC01EF2213B3C800062305 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		F6CC01F32213B4DF00062305 /* TheMovieDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6CC01B22213A80200062305 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6CC01EA2213B39D00062305 /* Moya.framework in Frameworks */,
+				F6CC01EC2213B3A300062305 /* Result.framework in Frameworks */,
+				F6CC01EE2213B3B100062305 /* Alamofire.framework in Frameworks */,
+				F6CC01F02213B3C800062305 /* RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6CC01C92213A80600062305 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F6CC01AC2213A80200062305 = {
+			isa = PBXGroup;
+			children = (
+				F6CC01B72213A80200062305 /* The10-Mauldin */,
+				F6CC01CF2213A80600062305 /* The10-MauldinTests */,
+				F6CC01B62213A80200062305 /* Products */,
+				F6CC01E82213B39D00062305 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F6CC01B62213A80200062305 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6CC01B52213A80200062305 /* The10-Mauldin.app */,
+				F6CC01CC2213A80600062305 /* The10-MauldinTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6CC01B72213A80200062305 /* The10-Mauldin */ = {
+			isa = PBXGroup;
+			children = (
+				F6CC01E72213B02E00062305 /* Networking */,
+				F6CC01DB2213A82F00062305 /* Models */,
+				F6CC01B82213A80200062305 /* AppDelegate.swift */,
+				F6CC01BA2213A80200062305 /* ViewController.swift */,
+				F6CC01BC2213A80200062305 /* Main.storyboard */,
+				F6CC01C22213A80500062305 /* Assets.xcassets */,
+				F6CC01C42213A80500062305 /* LaunchScreen.storyboard */,
+				F6CC01C72213A80500062305 /* Info.plist */,
+				F6CC01BF2213A80200062305 /* The10_Mauldin.xcdatamodeld */,
+			);
+			path = "The10-Mauldin";
+			sourceTree = "<group>";
+		};
+		F6CC01CF2213A80600062305 /* The10-MauldinTests */ = {
+			isa = PBXGroup;
+			children = (
+				F6CC01D02213A80600062305 /* The10_MauldinTests.swift */,
+				F6CC01D22213A80600062305 /* Info.plist */,
+			);
+			path = "The10-MauldinTests";
+			sourceTree = "<group>";
+		};
+		F6CC01DB2213A82F00062305 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F6CC01DC2213A84900062305 /* Movie.swift */,
+				F6CC01E42213AE4B00062305 /* Credits.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F6CC01E72213B02E00062305 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F6CC01F32213B4DF00062305 /* TheMovieDBService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F6CC01E82213B39D00062305 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6CC01EF2213B3C800062305 /* RxSwift.framework */,
+				F6CC01ED2213B3B100062305 /* Alamofire.framework */,
+				F6CC01EB2213B3A300062305 /* Result.framework */,
+				F6CC01E92213B39D00062305 /* Moya.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F6CC01B42213A80200062305 /* The10-Mauldin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6CC01D52213A80600062305 /* Build configuration list for PBXNativeTarget "The10-Mauldin" */;
+			buildPhases = (
+				F6CC01B12213A80200062305 /* Sources */,
+				F6CC01B22213A80200062305 /* Frameworks */,
+				F6CC01B32213A80200062305 /* Resources */,
+				F6CC01F22213B3F200062305 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The10-Mauldin";
+			productName = "The10-Mauldin";
+			productReference = F6CC01B52213A80200062305 /* The10-Mauldin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F6CC01CB2213A80600062305 /* The10-MauldinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6CC01D82213A80600062305 /* Build configuration list for PBXNativeTarget "The10-MauldinTests" */;
+			buildPhases = (
+				F6CC01C82213A80600062305 /* Sources */,
+				F6CC01C92213A80600062305 /* Frameworks */,
+				F6CC01CA2213A80600062305 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6CC01CE2213A80600062305 /* PBXTargetDependency */,
+			);
+			name = "The10-MauldinTests";
+			productName = "The10-MauldinTests";
+			productReference = F6CC01CC2213A80600062305 /* The10-MauldinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F6CC01AD2213A80200062305 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Chris Mauldin";
+				TargetAttributes = {
+					F6CC01B42213A80200062305 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					F6CC01CB2213A80600062305 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F6CC01B42213A80200062305;
+					};
+				};
+			};
+			buildConfigurationList = F6CC01B02213A80200062305 /* Build configuration list for PBXProject "The10-Mauldin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F6CC01AC2213A80200062305;
+			productRefGroup = F6CC01B62213A80200062305 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6CC01B42213A80200062305 /* The10-Mauldin */,
+				F6CC01CB2213A80600062305 /* The10-MauldinTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6CC01B32213A80200062305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6CC01C62213A80500062305 /* LaunchScreen.storyboard in Resources */,
+				F6CC01C32213A80500062305 /* Assets.xcassets in Resources */,
+				F6CC01BE2213A80200062305 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6CC01CA2213A80600062305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F6CC01F22213B3F200062305 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Moya.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F6CC01B12213A80200062305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6CC01F42213B4DF00062305 /* TheMovieDBService.swift in Sources */,
+				F6CC01BB2213A80200062305 /* ViewController.swift in Sources */,
+				F6CC01B92213A80200062305 /* AppDelegate.swift in Sources */,
+				F6CC01DD2213A84900062305 /* Movie.swift in Sources */,
+				F6CC01E52213AE4B00062305 /* Credits.swift in Sources */,
+				F6CC01C12213A80200062305 /* The10_Mauldin.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6CC01C82213A80600062305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6CC01F52213B4DF00062305 /* TheMovieDBService.swift in Sources */,
+				F6CC01E62213AE4B00062305 /* Credits.swift in Sources */,
+				F6CC01D12213A80600062305 /* The10_MauldinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F6CC01CE2213A80600062305 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6CC01B42213A80200062305 /* The10-Mauldin */;
+			targetProxy = F6CC01CD2213A80600062305 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F6CC01BC2213A80200062305 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6CC01BD2213A80200062305 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F6CC01C42213A80500062305 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6CC01C52213A80500062305 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F6CC01D32213A80600062305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F6CC01D42213A80600062305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F6CC01D62213A80600062305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K62Y623GK6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "The10-Mauldin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "e-bushi.The10-Mauldin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F6CC01D72213A80600062305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K62Y623GK6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "The10-Mauldin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "e-bushi.The10-Mauldin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F6CC01D92213A80600062305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K62Y623GK6;
+				INFOPLIST_FILE = "The10-MauldinTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "e-bushi.The10-MauldinTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The10-Mauldin.app/The10-Mauldin";
+			};
+			name = Debug;
+		};
+		F6CC01DA2213A80600062305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K62Y623GK6;
+				INFOPLIST_FILE = "The10-MauldinTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "e-bushi.The10-MauldinTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The10-Mauldin.app/The10-Mauldin";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F6CC01B02213A80200062305 /* Build configuration list for PBXProject "The10-Mauldin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6CC01D32213A80600062305 /* Debug */,
+				F6CC01D42213A80600062305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6CC01D52213A80600062305 /* Build configuration list for PBXNativeTarget "The10-Mauldin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6CC01D62213A80600062305 /* Debug */,
+				F6CC01D72213A80600062305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6CC01D82213A80600062305 /* Build configuration list for PBXNativeTarget "The10-MauldinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6CC01D92213A80600062305 /* Debug */,
+				F6CC01DA2213A80600062305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F6CC01BF2213A80200062305 /* The10_Mauldin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F6CC01C02213A80200062305 /* The10_Mauldin.xcdatamodel */,
+			);
+			currentVersion = F6CC01C02213A80200062305 /* The10_Mauldin.xcdatamodel */;
+			path = The10_Mauldin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F6CC01AD2213A80200062305 /* Project object */;
+}
