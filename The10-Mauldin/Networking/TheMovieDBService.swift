@@ -65,13 +65,13 @@ extension TheMovieDBService: TargetType {
     var task: Task {
         switch self {
         case .readUpcomingMovies:
-            return .requestParameters(parameters: ["api_key": TheMovieDBService.api_key], encoding: JSONEncoding.prettyPrinted)
+            return .requestParameters(parameters: ["api_key": TheMovieDBService.api_key], encoding: URLEncoding.queryString)
             
         case .readNowPlaying:
-            return .requestParameters(parameters: ["api_key": TheMovieDBService.api_key], encoding: JSONEncoding.prettyPrinted)
+            return .requestParameters(parameters: ["api_key": TheMovieDBService.api_key], encoding: URLEncoding.queryString)
             
         case .readCredits(_):
-            return .requestParameters(parameters: ["api_key": TheMovieDBService.api_key], encoding: JSONEncoding.prettyPrinted)
+            return .requestParameters(parameters: ["api_key": TheMovieDBService.api_key], encoding: URLEncoding.queryString)
         }
     }
     

@@ -9,15 +9,10 @@
 import Foundation
 
 struct MovieCategory {
-    var result: [Movie]
-    var page: Int
-    var totalResults: Int
-    var dates: MinMaxDate
-    var totalPages: Int
+    var results: [Movie]
 }
 
 struct Movie {
-    var voteCount: Int
     var id: Int
     var title: String
     var posterPath: String
@@ -25,7 +20,3 @@ struct Movie {
     var releaseDate: String
 }
 
-struct MinMaxDate {
-    var maximum: String
-    var minimum: String
-}

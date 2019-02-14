@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F631B8AC221473EC00C6B485 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B8AB221473EC00C6B485 /* MovieViewModel.swift */; };
+		F631B8AE22147C0200C6B485 /* MovieAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B8AD22147C0200C6B485 /* MovieAbstract.swift */; };
+		F631B8B0221482B000C6B485 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B8AF221482B000C6B485 /* CharacterViewModel.swift */; };
+		F631B8B42214844D00C6B485 /* CrewmanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B8B32214844D00C6B485 /* CrewmanViewModel.swift */; };
+		F631B8B62214A26200C6B485 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B8B52214A26200C6B485 /* MovieDetails.swift */; };
+		F631B8B82214A54600C6B485 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B8B72214A54600C6B485 /* MovieDetailsViewModel.swift */; };
+		F631B8BA2214BDA300C6B485 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B8B92214BDA300C6B485 /* Kingfisher.framework */; };
+		F631B8BC2214F7CB00C6B485 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B8BB2214F7CA00C6B485 /* SwiftyJSON.framework */; };
 		F6CC01B92213A80200062305 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01B82213A80200062305 /* AppDelegate.swift */; };
-		F6CC01BB2213A80200062305 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01BA2213A80200062305 /* ViewController.swift */; };
 		F6CC01BE2213A80200062305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6CC01BC2213A80200062305 /* Main.storyboard */; };
 		F6CC01C12213A80200062305 /* The10_Mauldin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01BF2213A80200062305 /* The10_Mauldin.xcdatamodeld */; };
 		F6CC01C32213A80500062305 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6CC01C22213A80500062305 /* Assets.xcassets */; };
@@ -52,9 +59,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F631B8AB221473EC00C6B485 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		F631B8AD22147C0200C6B485 /* MovieAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAbstract.swift; sourceTree = "<group>"; };
+		F631B8AF221482B000C6B485 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		F631B8B32214844D00C6B485 /* CrewmanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewmanViewModel.swift; sourceTree = "<group>"; };
+		F631B8B52214A26200C6B485 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		F631B8B72214A54600C6B485 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
+		F631B8B92214BDA300C6B485 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		F631B8BB2214F7CA00C6B485 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		F6CC01B52213A80200062305 /* The10-Mauldin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The10-Mauldin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6CC01B82213A80200062305 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F6CC01BA2213A80200062305 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F6CC01BD2213A80200062305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6CC01C02213A80200062305 /* The10_Mauldin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = The10_Mauldin.xcdatamodel; sourceTree = "<group>"; };
 		F6CC01C22213A80500062305 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +103,8 @@
 				F6CC01EC2213B3A300062305 /* Result.framework in Frameworks */,
 				F6CC01EE2213B3B100062305 /* Alamofire.framework in Frameworks */,
 				F6CC01F02213B3C800062305 /* RxSwift.framework in Frameworks */,
+				F631B8BA2214BDA300C6B485 /* Kingfisher.framework in Frameworks */,
+				F631B8BC2214F7CB00C6B485 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +118,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F631B8A8221473A400C6B485 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F631B8AB221473EC00C6B485 /* MovieViewModel.swift */,
+				F631B8B72214A54600C6B485 /* MovieDetailsViewModel.swift */,
+				F631B8AF221482B000C6B485 /* CharacterViewModel.swift */,
+				F631B8B32214844D00C6B485 /* CrewmanViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		F6CC01AC2213A80200062305 = {
 			isa = PBXGroup;
 			children = (
@@ -124,12 +151,11 @@
 		F6CC01B72213A80200062305 /* The10-Mauldin */ = {
 			isa = PBXGroup;
 			children = (
+				F6CC01B82213A80200062305 /* AppDelegate.swift */,
 				F6CC01E72213B02E00062305 /* Networking */,
 				F6CC01DB2213A82F00062305 /* Models */,
-				F6CC01B82213A80200062305 /* AppDelegate.swift */,
-				F6CC01BA2213A80200062305 /* ViewController.swift */,
-				F6CC020022142B2C00062305 /* ShowMovies */,
 				F6CC01FF22142A7500062305 /* Home */,
+				F6CC020022142B2C00062305 /* ShowMovies */,
 				F6CC01BC2213A80200062305 /* Main.storyboard */,
 				F6CC01C22213A80500062305 /* Assets.xcassets */,
 				F6CC01C42213A80500062305 /* LaunchScreen.storyboard */,
@@ -151,7 +177,9 @@
 		F6CC01DB2213A82F00062305 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F631B8A8221473A400C6B485 /* ViewModels */,
 				F6CC01DC2213A84900062305 /* Movie.swift */,
+				F631B8B52214A26200C6B485 /* MovieDetails.swift */,
 				F6CC01E42213AE4B00062305 /* Credits.swift */,
 			);
 			path = Models;
@@ -161,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				F6CC01F32213B4DF00062305 /* TheMovieDBService.swift */,
+				F631B8AD22147C0200C6B485 /* MovieAbstract.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -168,6 +197,8 @@
 		F6CC01E82213B39D00062305 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F631B8BB2214F7CA00C6B485 /* SwiftyJSON.framework */,
+				F631B8B92214BDA300C6B485 /* Kingfisher.framework */,
 				F6CC01EF2213B3C800062305 /* RxSwift.framework */,
 				F6CC01ED2213B3B100062305 /* Alamofire.framework */,
 				F6CC01EB2213B3A300062305 /* Result.framework */,
@@ -314,6 +345,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -322,6 +355,8 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Moya.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -334,16 +369,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F631B8B42214844D00C6B485 /* CrewmanViewModel.swift in Sources */,
 				F6CC01F42213B4DF00062305 /* TheMovieDBService.swift in Sources */,
 				F6CC02062214330B00062305 /* MovieListCollectionViewCell.swift in Sources */,
-				F6CC01BB2213A80200062305 /* ViewController.swift in Sources */,
 				F6CC020222142B6800062305 /* MovieListingsViewController.swift in Sources */,
 				F6CC01B92213A80200062305 /* AppDelegate.swift in Sources */,
 				F6CC01DD2213A84900062305 /* Movie.swift in Sources */,
 				F6CC01E52213AE4B00062305 /* Credits.swift in Sources */,
 				F6CC01F722141EFF00062305 /* HomeViewController.swift in Sources */,
+				F631B8B82214A54600C6B485 /* MovieDetailsViewModel.swift in Sources */,
+				F631B8B62214A26200C6B485 /* MovieDetails.swift in Sources */,
 				F6CC01C12213A80200062305 /* The10_Mauldin.xcdatamodeld in Sources */,
+				F631B8B0221482B000C6B485 /* CharacterViewModel.swift in Sources */,
+				F631B8AC221473EC00C6B485 /* MovieViewModel.swift in Sources */,
 				F6CC020F22145EC700062305 /* MovieCastCollectionViewCell.swift in Sources */,
+				F631B8AE22147C0200C6B485 /* MovieAbstract.swift in Sources */,
 				F6CC01FB2214201C00062305 /* MovieCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

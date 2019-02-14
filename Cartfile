@@ -1,1 +1,4 @@
 github "Moya/Moya"
+github "onevcat/Kingfisher" ~> 5.0
+github "SwiftyJSON/SwiftyJSON" ~> 4.0
+

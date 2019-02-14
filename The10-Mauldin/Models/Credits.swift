@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Credits: Codable {
+struct Credits: Decodable {
     var id: Int
     var cast: [CharacterEntity]
     var crew: [CrewEntity]
 }
 
-struct CharacterEntity: Codable {
+struct CharacterEntity {
     var castId: Int
     var character: String
     var creditId: String
@@ -22,7 +22,13 @@ struct CharacterEntity: Codable {
     var id: Int
     var name: String
     var order: Int
-    var profilePath: String
+    var profilePath: String?
+}
+
+extension CharacterEntity: Decodable {
+    enum Keys: String, CodingKey {
+        case profilePath = "profile_path"
+    }
 }
 
 struct CrewEntity: Codable {

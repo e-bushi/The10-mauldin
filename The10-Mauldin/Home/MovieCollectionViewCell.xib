@@ -19,41 +19,85 @@
                 <rect key="frame" x="0.0" y="0.0" width="350" height="390"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tx6-ad-WVT">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEz-yE-uws">
                         <rect key="frame" x="0.0" y="0.0" width="350" height="390"/>
-                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGs-0c-ScV">
-                        <rect key="frame" x="9" y="24.5" width="350" height="68.5"/>
-                        <attributedString key="attributedText">
-                            <fragment content="See Movies That Are Now Playing">
-                                <attributes>
-                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <font key="NSFont" size="25" name="AvenirNext-Bold"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYh-Tc-cq7">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="390"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tx6-ad-WVT">
+                                        <rect key="frame" x="0.0" y="-19.5" width="350" height="468"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYC-cZ-WFK">
+                                        <rect key="frame" x="0.0" y="293" width="350" height="97"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Hyz-UT-3yr">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="97"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGs-0c-ScV">
+                                                    <rect key="frame" x="26.5" y="14" width="262.5" height="68.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="See Movies That Are Now Playing">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="25" name="AvenirNext-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kGs-0c-ScV" firstAttribute="centerY" secondItem="Hyz-UT-3yr" secondAttribute="centerY" id="03m-m0-MFK"/>
+                                                <constraint firstItem="kGs-0c-ScV" firstAttribute="width" secondItem="Hyz-UT-3yr" secondAttribute="width" multiplier="0.75" id="RwV-bV-ZSa"/>
+                                                <constraint firstItem="kGs-0c-ScV" firstAttribute="leading" secondItem="Hyz-UT-3yr" secondAttribute="centerX" multiplier="0.15" id="oNG-FU-wcV"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xYC-cZ-WFK" secondAttribute="height" multiplier="9:2.5" id="KQu-ng-vAn"/>
+                                        </constraints>
+                                        <blurEffect style="dark"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Tx6-ad-WVT" firstAttribute="width" secondItem="XYh-Tc-cq7" secondAttribute="width" id="5h0-KR-3e7"/>
+                                    <constraint firstItem="xYC-cZ-WFK" firstAttribute="centerX" secondItem="XYh-Tc-cq7" secondAttribute="centerX" id="7Dc-AJ-Z6w"/>
+                                    <constraint firstItem="Tx6-ad-WVT" firstAttribute="centerY" secondItem="XYh-Tc-cq7" secondAttribute="centerY" multiplier="1.1" id="PQz-St-rNu"/>
+                                    <constraint firstAttribute="bottom" secondItem="xYC-cZ-WFK" secondAttribute="bottom" id="WIg-Bp-KBQ"/>
+                                    <constraint firstItem="Tx6-ad-WVT" firstAttribute="centerX" secondItem="XYh-Tc-cq7" secondAttribute="centerX" id="XeI-Bi-s1e"/>
+                                    <constraint firstItem="Tx6-ad-WVT" firstAttribute="height" secondItem="XYh-Tc-cq7" secondAttribute="height" multiplier="1.2" id="ad7-QU-Sex"/>
+                                    <constraint firstItem="xYC-cZ-WFK" firstAttribute="width" secondItem="XYh-Tc-cq7" secondAttribute="width" id="s1x-Ub-Wxm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="XYh-Tc-cq7" secondAttribute="bottom" id="IYC-Bs-1Mh"/>
+                            <constraint firstAttribute="trailing" secondItem="XYh-Tc-cq7" secondAttribute="trailing" id="YGu-Pn-FIH"/>
+                            <constraint firstItem="XYh-Tc-cq7" firstAttribute="top" secondItem="HEz-yE-uws" secondAttribute="top" id="c28-hd-wWf"/>
+                            <constraint firstItem="XYh-Tc-cq7" firstAttribute="leading" secondItem="HEz-yE-uws" secondAttribute="leading" id="lcs-sM-PbM"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" name="textColor" catalog="System" colorSpace="catalog"/>
             <constraints>
-                <constraint firstItem="kGs-0c-ScV" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="HWx-XF-D2C"/>
-                <constraint firstAttribute="trailing" secondItem="Tx6-ad-WVT" secondAttribute="trailing" id="P4P-Kf-6ET"/>
-                <constraint firstItem="kGs-0c-ScV" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" multiplier="0.3" id="aU7-aH-41l"/>
-                <constraint firstItem="Tx6-ad-WVT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="c6t-6F-qbP"/>
-                <constraint firstItem="Tx6-ad-WVT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mE2-2F-nif"/>
-                <constraint firstItem="kGs-0c-ScV" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="centerX" multiplier="0.05" id="uH3-24-Shp"/>
-                <constraint firstAttribute="bottom" secondItem="Tx6-ad-WVT" secondAttribute="bottom" id="zr7-if-C1t"/>
+                <constraint firstAttribute="trailing" secondItem="HEz-yE-uws" secondAttribute="trailing" id="C4q-CP-lHZ"/>
+                <constraint firstAttribute="bottom" secondItem="HEz-yE-uws" secondAttribute="bottom" id="GTq-sU-rP2"/>
+                <constraint firstItem="HEz-yE-uws" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Yp4-w8-pSV"/>
+                <constraint firstItem="HEz-yE-uws" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zvO-5Y-SvM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="264" height="363"/>
             <connections>
                 <outlet property="movieCategoryLabel" destination="kGs-0c-ScV" id="Ot2-Qs-5L0"/>
                 <outlet property="movieImage" destination="Tx6-ad-WVT" id="7x8-eH-hPU"/>
+                <outlet property="superContainer" destination="HEz-yE-uws" id="LKB-Kb-JS3"/>
+                <outlet property="superSubContainer" destination="XYh-Tc-cq7" id="6b5-it-H1s"/>
             </connections>
-            <point key="canvasLocation" x="308.80000000000001" y="294.60269865067471"/>
+            <point key="canvasLocation" x="308.80000000000001" y="294.15292353823088"/>
         </collectionViewCell>
     </objects>
 </document>
