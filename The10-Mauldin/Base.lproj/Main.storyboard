@@ -377,7 +377,7 @@
                                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="fTX-wT-CNV"/>
                                                                                 </constraints>
                                                                                 <attributedString key="attributedText">
-                                                                                    <fragment content="Budget">
+                                                                                    <fragment content="Genres">
                                                                                         <attributes>
                                                                                             <font key="NSFont" size="14" name="AvenirNext-DemiBold"/>
                                                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -392,7 +392,7 @@
                                                                                     <constraint firstAttribute="width" constant="179" id="Nyv-aw-mAJ"/>
                                                                                 </constraints>
                                                                                 <attributedString key="attributedText">
-                                                                                    <fragment content="Budget amount">
+                                                                                    <fragment content="Genre names">
                                                                                         <attributes>
                                                                                             <font key="NSFont" size="14" name="AvenirNext-Medium"/>
                                                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -470,11 +470,17 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="0.98042112589999997" green="0.98036307099999997" blue="0.98039370780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstItem="Vzj-Za-0In" firstAttribute="centerY" secondItem="71j-h3-Oc2" secondAttribute="centerY" id="3tl-Tp-AmY"/>
                                                             <constraint firstItem="Vzj-Za-0In" firstAttribute="centerX" secondItem="71j-h3-Oc2" secondAttribute="centerX" id="zHT-C7-1qQ"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -534,11 +540,11 @@
                     </view>
                     <size key="freeformSize" width="375" height="1151"/>
                     <connections>
-                        <outlet property="budgetAmountLabel" destination="CpN-ta-bYV" id="RlH-0Z-reh"/>
                         <outlet property="countryNamesLabel" destination="ij0-GR-bMj" id="pOJ-Lv-4tB"/>
                         <outlet property="dateOfReleaseLabel" destination="UYu-H0-jNg" id="6vq-t2-Fsh"/>
                         <outlet property="directorNameLabel" destination="O3T-v1-NBh" id="M3Z-Bd-Xpk"/>
                         <outlet property="filmDurationLabel" destination="P9B-a1-9un" id="XHD-XP-zyW"/>
+                        <outlet property="genreNameLabel" destination="CpN-ta-bYV" id="cnO-Vf-6c6"/>
                         <outlet property="movieCastCollection" destination="boM-Ji-A6H" id="hyI-TO-f9U"/>
                         <outlet property="movieListCollection" destination="rPf-th-qsi" id="gqJ-k9-aN2"/>
                         <outlet property="movieTitleLabel" destination="R0J-gT-p8E" id="uSn-TY-Hk1"/>
@@ -557,15 +563,15 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mYB-xy-M7h" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="zdc-rh-uMy">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="100"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="40"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="35"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>

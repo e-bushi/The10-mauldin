@@ -22,7 +22,7 @@ class MovieListingsViewController: UIViewController {
     @IBOutlet weak var countryNamesLabel: UILabel!
     @IBOutlet weak var dateOfReleaseLabel: UILabel!
     @IBOutlet weak var directorNameLabel: UILabel!
-    @IBOutlet weak var budgetAmountLabel: UILabel!
+    @IBOutlet weak var genreNameLabel: UILabel!
     @IBOutlet weak var filmDurationLabel: UILabel!
     @IBOutlet weak var revenueAmountLabel: UILabel!
     
@@ -46,29 +46,40 @@ class MovieListingsViewController: UIViewController {
     }
     
     func setElementValues(section: Int, which movies: [MovieViewModel]) {
+        guard let movieID = movies[section].id else { return }
+        let detail = details.first { $0.id == movieID }
+        guard let movieDetail = detail else { return }
+        let credDetail = credits.first { $0.id == movieID }
+        guard let creditDetails = credDetail else { return }
         self.movieTitleLabel.text = movies[section].title
         var director: String = ""
-        let nameJobTuple = credits[section].crew?.first { $0.1 == "Director" }
+        let nameJobTuple = creditDetails.crew?.first { $0.1 == "Director" }
         guard let nameJob = nameJobTuple else { return }
         director = nameJob.0
         self.directorNameLabel.text = director
         self.overviewTextView.text = movies[section].overview
         var companies: String = ""
-        details[section].productionCompanies?.forEach({ (names) in
+        movieDetail.productionCompanies?.forEach({ (names) in
             
-            companies += "\(names), "
+            companies += "\(names) - "
         })
         self.productionCompaniesLabel.text = companies
+        
         var countries: String = ""
-        details[section].productionCountries?.forEach({ (coutries) in
-            countries += "\(countries)"
+        movieDetail.productionCountries?.forEach({ (country) in
+            countries += "\(country) - "
+        })
+        
+        var genres: String = ""
+        movieDetail.genres?.forEach({ (genre) in
+            genres += "\(genre) - "
         })
         
         self.countryNamesLabel.text = countries
         self.dateOfReleaseLabel.text = movies[section].releaseDate
-        self.budgetAmountLabel.text = "\(details[section].budget!)"
-        self.filmDurationLabel.text = "\(details[section].runtime!)"
-        self.revenueAmountLabel.text = "\(details[section].revenue!)"
+        self.genreNameLabel.text = genres
+        self.filmDurationLabel.text = "\(movieDetail.runtime!) Mins"
+        self.revenueAmountLabel.text = Int.Currency(value: movieDetail.revenue!)
 //        movieCastCollection.reloadData()
     }
     
@@ -212,6 +223,26 @@ UICollectionViewDelegate {
         return TheMovieDBService.fullPosterPathUrl(endpoint: posterPath)
     }
     
+    func intializeCellData(_ cellPath: inout IndexPath,
+                           movies: [MovieViewModel],
+                           cell: MovieCastCollectionViewCell) -> MovieCastCollectionViewCell {
+        let movieId = movies[cellPath.section].id
+        let creditVm = credits.first { $0.id == movieId }
+        guard let trifecta = creditVm?.cast?[cellPath.row] else { return cell }
+        guard let path = CreditDetailViewModel.retrieveCastProfileImagePath(path: trifecta.2)
+            else {
+                return cell
+        }
+        let fullUrl = TheMovieDBService.fullPosterPathUrl(endpoint: path)
+        cell.actorImage.downloadAndCacheImages(url: fullUrl)
+        cellPath.row += 1
+        if cellPath.row > 6 {
+            cellPath.row = 0
+        }
+        
+        return cell
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
             cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let movieCell: MovieListCollectionViewCell
@@ -232,22 +263,19 @@ UICollectionViewDelegate {
                                         for: indexPath) as! MovieCastCollectionViewCell
             
             if credits.count > 0 && details.count > 0 {
-                setElementValues(section: cellPath.section, which: upcomingMovies)
-                let movieId = upcomingMovies[cellPath.section].id
-                let creditVm = credits.first { $0.id == movieId }
-                guard let trifecta = creditVm?.cast?[cellPath.row] else { return castCell }
-                guard let path = CreditDetailViewModel.retrieveCastProfileImagePath(path: trifecta.2)
-                else {
-                    return castCell
+                switch upcomingMoviesTransferred{
+                case true:
+                    setElementValues(section: cellPath.section, which: upcomingMovies)
+                    return intializeCellData(&cellPath,
+                                             movies: upcomingMovies,
+                                             cell: castCell)
+                    
+                case false:
+                    setElementValues(section: cellPath.section, which: nowPlayingMovies)
+                    return intializeCellData(&cellPath,
+                                             movies: nowPlayingMovies,
+                                             cell: castCell)
                 }
-                let fullUrl = TheMovieDBService.fullPosterPathUrl(endpoint: path)
-                castCell.actorImage.downloadAndCacheImages(url: fullUrl)
-                cellPath.row += 1
-                if cellPath.row > 6 {
-                    cellPath.row = 0
-                }
-                
-                return castCell
             } else {
                 return castCell
             }
@@ -273,6 +301,23 @@ UICollectionViewDelegate {
             return
         }
     
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? MovieListCollectionViewCell {
+            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1.5, initialSpringVelocity: 3.0, options: [.curveEaseInOut], animations: {
+                cell.transform = .init(scaleX: 0.7, y: 0.7)
+            }, completion: nil)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? MovieListCollectionViewCell {
+            UIView.animate(withDuration: 0.5) {
+                cell.transform = .identity
+                cell.isSelected = false
+            }
+        }
     }
     
     

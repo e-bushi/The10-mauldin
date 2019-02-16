@@ -36,7 +36,11 @@ class MovieAbstract {
                                       releaseDate: movie["release_date"].stringValue)
                     
                     let movieVM = MovieViewModel(movie: movie)
-                    upcomingMovies.append(movieVM)
+                    if upcomingMovies.count == 10 {
+                        return
+                    } else {
+                        upcomingMovies.append(movieVM)
+                    }
                 })
                 
                 completion(upcomingMovies)
@@ -62,7 +66,11 @@ class MovieAbstract {
                                       releaseDate: movie["release_date"].stringValue)
                     
                     let movieVM = MovieViewModel(movie: movie)
-                    nowPlayingMovies.append(movieVM)
+                    if nowPlayingMovies.count == 10 {
+                        return
+                    } else {
+                        nowPlayingMovies.append(movieVM)
+                    }
                 })
                 
                 completion(nowPlayingMovies)

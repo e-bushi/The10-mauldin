@@ -15,6 +15,7 @@
 		F631B8BC2214F7CB00C6B485 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B8BB2214F7CA00C6B485 /* SwiftyJSON.framework */; };
 		F66CF8462215C63200FB4FD1 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CF8452215C63200FB4FD1 /* UIImageView+Extension.swift */; };
 		F66CF8482216D81300FB4FD1 /* CreditDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CF8472216D81300FB4FD1 /* CreditDetailsViewModel.swift */; };
+		F66CF84E221848C400FB4FD1 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CF84D221848C400FB4FD1 /* Int+Extension.swift */; };
 		F6CC01B92213A80200062305 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01B82213A80200062305 /* AppDelegate.swift */; };
 		F6CC01BE2213A80200062305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6CC01BC2213A80200062305 /* Main.storyboard */; };
 		F6CC01C12213A80200062305 /* The10_Mauldin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01BF2213A80200062305 /* The10_Mauldin.xcdatamodeld */; };
@@ -67,6 +68,7 @@
 		F631B8BB2214F7CA00C6B485 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		F66CF8452215C63200FB4FD1 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F66CF8472216D81300FB4FD1 /* CreditDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditDetailsViewModel.swift; sourceTree = "<group>"; };
+		F66CF84D221848C400FB4FD1 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		F6CC01B52213A80200062305 /* The10-Mauldin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The10-Mauldin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6CC01B82213A80200062305 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6CC01BD2213A80200062305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				F66CF8452215C63200FB4FD1 /* UIImageView+Extension.swift */,
+				F66CF84D221848C400FB4FD1 /* Int+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				F6CC01F42213B4DF00062305 /* TheMovieDBService.swift in Sources */,
 				F6CC02062214330B00062305 /* MovieListCollectionViewCell.swift in Sources */,
 				F6CC020222142B6800062305 /* MovieListingsViewController.swift in Sources */,
+				F66CF84E221848C400FB4FD1 /* Int+Extension.swift in Sources */,
 				F6CC01B92213A80200062305 /* AppDelegate.swift in Sources */,
 				F66CF8482216D81300FB4FD1 /* CreditDetailsViewModel.swift in Sources */,
 				F6CC01DD2213A84900062305 /* Movie.swift in Sources */,

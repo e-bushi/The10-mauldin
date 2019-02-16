@@ -18,6 +18,7 @@ class MovieDetailsViewModel {
     var runtime: Int?
     
     init(details: MovieDetails) {
+        self.id = details.id
         self.budget = details.budget
         self.genres = details.genres
         self.productionCompanies = details.productionCompanies
