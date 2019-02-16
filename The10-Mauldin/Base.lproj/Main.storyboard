@@ -63,11 +63,11 @@
             <objects>
                 <viewController id="dnf-Eb-9OD" customClass="MovieListingsViewController" customModule="The10_Mauldin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uSb-Yo-6pS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1151"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1189"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWu-uh-Jq4">
-                                <rect key="frame" x="0.0" y="116" width="375" height="1035"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="1073"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBi-Yy-P6l" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1095"/>
@@ -249,7 +249,7 @@
                                                 <rect key="frame" x="0.0" y="703" width="375" height="392"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3am-6C-t3X">
-                                                        <rect key="frame" x="19" y="17.5" width="54" height="23.5"/>
+                                                        <rect key="frame" x="19" y="21" width="54" height="17"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="About:">
                                                                 <attributes>
@@ -261,10 +261,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71j-h3-Oc2">
-                                                        <rect key="frame" x="28" y="48.5" width="319" height="295"/>
+                                                        <rect key="frame" x="28" y="45.5" width="319" height="301"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Vzj-Za-0In">
-                                                                <rect key="frame" x="23" y="45" width="273" height="205"/>
+                                                                <rect key="frame" x="23" y="33.5" width="273" height="234.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="djn-Bc-ao4">
                                                                         <rect key="frame" x="0.0" y="0.0" width="273" height="19.5"/>
@@ -467,12 +467,46 @@
                                                                             </label>
                                                                         </subviews>
                                                                     </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="qxf-RC-NnY">
+                                                                        <rect key="frame" x="0.0" y="215" width="273" height="19.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rI5-AX-NM3">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="71" height="18"/>
+                                                                                <attributedString key="attributedText">
+                                                                                    <fragment content="Homepage">
+                                                                                        <attributes>
+                                                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                            <font key="NSFont" size="13" name="AvenirNext-DemiBold"/>
+                                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                        </attributes>
+                                                                                    </fragment>
+                                                                                </attributedString>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEH-rs-u9I">
+                                                                                <rect key="frame" x="94" y="0.0" width="179" height="19.5"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="179" id="jds-iT-AOj"/>
+                                                                                </constraints>
+                                                                                <attributedString key="attributedText">
+                                                                                    <fragment content="Revenue amount">
+                                                                                        <attributes>
+                                                                                            <font key="NSFont" size="14" name="AvenirNext-Medium"/>
+                                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                        </attributes>
+                                                                                    </fragment>
+                                                                                </attributedString>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.98042112589999997" green="0.98036307099999997" blue="0.98039370780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstItem="Vzj-Za-0In" firstAttribute="centerY" secondItem="71j-h3-Oc2" secondAttribute="centerY" id="3tl-Tp-AmY"/>
+                                                            <constraint firstAttribute="width" secondItem="71j-h3-Oc2" secondAttribute="height" multiplier="9:8.5" id="bmE-gt-V11"/>
                                                             <constraint firstItem="Vzj-Za-0In" firstAttribute="centerX" secondItem="71j-h3-Oc2" secondAttribute="centerX" id="zHT-C7-1qQ"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -538,13 +572,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iPk-7g-Qud"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1151"/>
+                    <size key="freeformSize" width="375" height="1189"/>
                     <connections>
                         <outlet property="countryNamesLabel" destination="ij0-GR-bMj" id="pOJ-Lv-4tB"/>
                         <outlet property="dateOfReleaseLabel" destination="UYu-H0-jNg" id="6vq-t2-Fsh"/>
                         <outlet property="directorNameLabel" destination="O3T-v1-NBh" id="M3Z-Bd-Xpk"/>
                         <outlet property="filmDurationLabel" destination="P9B-a1-9un" id="XHD-XP-zyW"/>
                         <outlet property="genreNameLabel" destination="CpN-ta-bYV" id="cnO-Vf-6c6"/>
+                        <outlet property="homepageLabel" destination="pEH-rs-u9I" id="qLy-UA-Mss"/>
                         <outlet property="movieCastCollection" destination="boM-Ji-A6H" id="hyI-TO-f9U"/>
                         <outlet property="movieListCollection" destination="rPf-th-qsi" id="gqJ-k9-aN2"/>
                         <outlet property="movieTitleLabel" destination="R0J-gT-p8E" id="uSn-TY-Hk1"/>

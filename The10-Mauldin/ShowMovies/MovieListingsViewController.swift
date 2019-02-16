@@ -25,6 +25,7 @@ class MovieListingsViewController: UIViewController {
     @IBOutlet weak var genreNameLabel: UILabel!
     @IBOutlet weak var filmDurationLabel: UILabel!
     @IBOutlet weak var revenueAmountLabel: UILabel!
+    @IBOutlet weak var homepageLabel: UILabel!
     
     enum MovieSections: Int {
         case zero = 0, one, two, three, four, five, six,
@@ -80,7 +81,7 @@ class MovieListingsViewController: UIViewController {
         self.genreNameLabel.text = genres
         self.filmDurationLabel.text = "\(movieDetail.runtime!) Mins"
         self.revenueAmountLabel.text = Int.Currency(value: movieDetail.revenue!)
-//        movieCastCollection.reloadData()
+        self.homepageLabel.text = movieDetail.homepage
     }
     
     //MMARK: Datasources for movie list collection

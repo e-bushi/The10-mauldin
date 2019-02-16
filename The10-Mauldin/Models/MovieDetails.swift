@@ -16,4 +16,5 @@ struct MovieDetails {
     var productionCountries: [String]
     var revenue: Int
     var runtime: Int
+    var homepage: String
 }

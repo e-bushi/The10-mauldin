@@ -45,6 +45,7 @@ class MovieViewModel {
                 let budget = json["budget"].intValue
                 let revenue = json["revenue"].intValue
                 let runtime = json["runtime"].intValue
+                let homepage = json["homepage"].stringValue
                 var companies: [String] = []
                 var countries: [String] = []
                 var genres = [String]()
@@ -67,7 +68,8 @@ class MovieViewModel {
                                                      genres: genres,
                                                      productionCompanies: companies,
                                                      productionCountries: countries,
-                                                     revenue: revenue, runtime: runtime)
+                                                     revenue: revenue, runtime: runtime,
+                                                     homepage: homepage)
                 
                 let viewModel = MovieDetailsViewModel(details: movieDetails)
                 

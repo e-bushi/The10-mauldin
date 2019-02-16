@@ -16,6 +16,7 @@ class MovieDetailsViewModel {
     var productionCountries: [String]?
     var revenue: Int?
     var runtime: Int?
+    var homepage: String?
     
     init(details: MovieDetails) {
         self.id = details.id
@@ -25,5 +26,6 @@ class MovieDetailsViewModel {
         self.productionCountries = details.productionCountries
         self.revenue = details.revenue
         self.runtime = details.runtime
+        self.homepage = details.homepage
     }
 }
