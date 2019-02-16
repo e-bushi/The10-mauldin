@@ -107,6 +107,7 @@ class MovieListingsViewController: UIViewController {
     func setUpDelegatesDatasourcesAndCell() {
         movieListCollection.delegate = self
         movieListCollection.dataSource = self
+        
         movieListCollection.register(UINib(nibName: cellID, bundle: nil),
                                      forCellWithReuseIdentifier: cellID)
         
@@ -177,7 +178,7 @@ class MovieListingsViewController: UIViewController {
 
 
 extension MovieListingsViewController: UICollectionViewDataSource,
-UICollectionViewDelegate {
+UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         switch collectionView {
@@ -256,7 +257,6 @@ UICollectionViewDelegate {
             
             guard let fullPath = retrieveFullPosterPathForMovies(section: indexPath.section) else
             { return movieCell }
-            
             movieCell.movieImageView.downloadAndCacheImages(url: fullPath)
             return movieCell
         case movieCastCollection:
@@ -321,6 +321,18 @@ UICollectionViewDelegate {
         }
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch collectionView {
+        case movieListCollection:
+            return PhoneWidth.movieListCellSize()
+        case movieCastCollection:
+            return CGSize(width: 100, height: 100)
+            
+        default:
+            return CGSize.zero
+        }
+    }
     
     
 }

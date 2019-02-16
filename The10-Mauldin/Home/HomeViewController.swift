@@ -52,7 +52,10 @@ class HomeViewController: UIViewController {
         MovieCategoryCollection.dataSource = self
         MovieCategoryCollection.register(UINib(nibName: cellID, bundle: nil),
                                          forCellWithReuseIdentifier: cellID)
+        
     }
+    
+    
     
     //MARK: Indexpath used to retrieve cell that was tapped
     var cellPath: IndexPath? {
@@ -103,7 +106,7 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UICollectionViewDelegate,
-UICollectionViewDataSource {
+UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
@@ -115,14 +118,12 @@ UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID,
                                     for: indexPath) as! MovieCollectionViewCell
-        
         switch indexPath.row {
         case 0:
             guard let movie = firstUpcomingMovie else { return cell }
             guard let posterPath = movie.retrievePosterPath() else { return cell }
             let path = TheMovieDBService.fullPosterPathUrl(endpoint: posterPath)
             cell.movieCategoryLabel.text = "See Movies That Are Coming Soon"
-            
             cell.movieImage.downloadAndCacheImages(url: path)
             return cell
         case 1:
@@ -145,6 +146,10 @@ UICollectionViewDataSource {
         cellPath = indexPath
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return PhoneWidth.movieTypeCellSize()
+    }
     
     
 }
