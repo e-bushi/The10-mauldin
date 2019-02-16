@@ -15,6 +15,13 @@ enum TheMovieDBService {
     case readUpcomingMovies
     case readNowPlaying
     case readCredits(Int)
+    case readMovieDetails(Int)
+    
+    //MARK: returns Full URL path to fetch images
+    static func fullPosterPathUrl(endpoint: String) -> URL {
+        let urlString = "https://image.tmdb.org/t/p/w500/\(endpoint)?\(TheMovieDBService.api_key)"
+        return URL(string: urlString)!
+    }
 }
 
 extension TheMovieDBService: TargetType {
@@ -33,6 +40,9 @@ extension TheMovieDBService: TargetType {
             
         case .readCredits(let movieId):
             return "/\(movieId)/credits"
+            
+        case .readMovieDetails(let movieID):
+            return "/\(movieID)"
         }
     }
     
@@ -45,6 +55,9 @@ extension TheMovieDBService: TargetType {
             return .get
             
         case .readCredits:
+            return .get
+            
+        case .readMovieDetails:
             return .get
         }
     }
@@ -59,25 +72,23 @@ extension TheMovieDBService: TargetType {
             
         case .readCredits:
             return Data()
+            
+        case .readMovieDetails:
+            return Data()
+        
         }
     }
     
     var task: Task {
         switch self {
-        case .readUpcomingMovies:
-            return .requestParameters(parameters: ["api_key": TheMovieDBService.api_key], encoding: URLEncoding.queryString)
-            
-        case .readNowPlaying:
-            return .requestParameters(parameters: ["api_key": TheMovieDBService.api_key], encoding: URLEncoding.queryString)
-            
-        case .readCredits(_):
+        case .readUpcomingMovies, .readNowPlaying, .readCredits, .readMovieDetails:
             return .requestParameters(parameters: ["api_key": TheMovieDBService.api_key], encoding: URLEncoding.queryString)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .readUpcomingMovies, .readNowPlaying, .readCredits(_):
+        case .readUpcomingMovies, .readNowPlaying, .readCredits(_), .readMovieDetails(_):
             return ["Content-Type": "application/json"]
         }
     }

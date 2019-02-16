@@ -9,25 +9,11 @@
 import Foundation
 
 struct MovieDetails {
+    var id: Int
     var budget: Int
-    var genres: [Genre]
-    var productionCompanies: [Production]
+    var genres: [String]
+    var productionCompanies: [String]
+    var productionCountries: [String]
     var revenue: Int
     var runtime: Int
-}
-
-extension MovieDetails: Decodable {
-    enum Keys: String, CodingKey {
-        case productionCompanies = "production_companies"
-    }
-}
-
-struct Genre: Decodable {
-    var id: Int
-    var name: String
-}
-
-struct Production: Decodable {
-    var id: Int
-    var name: String
 }

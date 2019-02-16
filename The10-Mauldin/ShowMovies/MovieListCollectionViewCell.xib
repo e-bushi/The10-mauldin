@@ -19,17 +19,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="190"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KSm-6R-836">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIa-Uk-f8x">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="190"/>
-                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </imageView>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KSm-6R-836">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="190"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KSm-6R-836" firstAttribute="leading" secondItem="iIa-Uk-f8x" secondAttribute="leading" id="KEs-M0-XDi"/>
+                            <constraint firstAttribute="bottom" secondItem="KSm-6R-836" secondAttribute="bottom" id="Y7B-UF-ctg"/>
+                            <constraint firstAttribute="trailing" secondItem="KSm-6R-836" secondAttribute="trailing" id="cpu-ng-hFp"/>
+                            <constraint firstItem="KSm-6R-836" firstAttribute="top" secondItem="iIa-Uk-f8x" secondAttribute="top" id="e6i-WA-iMD"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="KSm-6R-836" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BII-Sx-9Si"/>
-                <constraint firstItem="KSm-6R-836" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DKl-3G-fQb"/>
-                <constraint firstAttribute="bottom" secondItem="KSm-6R-836" secondAttribute="bottom" id="fKZ-ZJ-5ay"/>
-                <constraint firstAttribute="trailing" secondItem="KSm-6R-836" secondAttribute="trailing" id="gky-fg-xUW"/>
+                <constraint firstItem="iIa-Uk-f8x" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1Ii-N7-XP1"/>
+                <constraint firstItem="iIa-Uk-f8x" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="k3B-8F-9Po"/>
+                <constraint firstAttribute="bottom" secondItem="iIa-Uk-f8x" secondAttribute="bottom" id="lek-ns-itd"/>
+                <constraint firstAttribute="trailing" secondItem="iIa-Uk-f8x" secondAttribute="trailing" id="uov-52-wxG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>

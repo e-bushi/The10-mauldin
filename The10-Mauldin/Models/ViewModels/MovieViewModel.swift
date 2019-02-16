@@ -8,6 +8,10 @@
 
 import Foundation
 import Moya
+import SwiftyJSON
+
+typealias MovieDetailsResult = (MovieDetailsViewModel) -> ()
+typealias CreditDetailsResult = (CreditDetailViewModel) -> ()
 
 class MovieViewModel {
     var id: Int?
@@ -18,11 +22,7 @@ class MovieViewModel {
     
     private let service = MoyaProvider<TheMovieDBService>(
         plugins: [NetworkLoggerPlugin(verbose: true)])
-    
-    var Details: MovieDetailsViewModel?
-    var cast: [CharacterViewModel] = []
-    var crew: [CrewmanViewModel] = []
-    
+        
     init(movie: Movie) {
         self.id = movie.id
         self.title = movie.title
@@ -35,40 +35,78 @@ class MovieViewModel {
       fetching credits, and specific movie details
     */
     
-    func getMovieDetails(completion: @escaping () -> ()) {
+    func getMovieDetails(completion: @escaping MovieDetailsResult) {
         guard let movieID = self.id else { return }
-        service.request(.readCredits(movieID)) { (result) in
+        service.request(.readMovieDetails(movieID)) { (result) in
             switch result {
             case .success(let response):
-                guard let movieDetails = try?
-                    JSONDecoder().decode(MovieDetails.self, from: response.data) else
-                {
-                    print("Details were't decoded correctly")
-                    return
-                }
+                let json = JSON(response.data)
+                let id = json["id"].intValue
+                let budget = json["budget"].intValue
+                let revenue = json["revenue"].intValue
+                let runtime = json["runtime"].intValue
+                var companies: [String] = []
+                var countries: [String] = []
+                var genres = [String]()
+                json["genres"].array?.forEach({ (genre) in
+                    let genreName = genre["name"].stringValue
+                    genres.append(genreName)
+                })
                 
-                self.Details = MovieDetailsViewModel(details: movieDetails)
+                json["production_companies"].array?.forEach({ (company) in
+                    let companyName = company["name"].stringValue
+                    companies.append(companyName)
+                })
                 
+                json["production_countries"].array?.forEach({ (country) in
+                    let countryName = country["name"].stringValue
+                    countries.append(countryName)
+                })
+                
+                let movieDetails = MovieDetails.init(id: id, budget: budget,
+                                                     genres: genres,
+                                                     productionCompanies: companies,
+                                                     productionCountries: countries,
+                                                     revenue: revenue, runtime: runtime)
+                
+                let viewModel = MovieDetailsViewModel(details: movieDetails)
+                
+                completion(viewModel)
             case .failure(let error):
                 print("There was an issue: \(error.localizedDescription)")
             }
         }
     }
     
-    func getCreditDetails(completion: @escaping () -> ()) {
+    func getCreditDetails(completion: @escaping CreditDetailsResult) {
         guard let movieID = self.id else { return }
         service.request(.readCredits(movieID)) { (result) in
             switch result {
             case .success(let response):
-                guard let creditDetails = try?
-                    JSONDecoder().decode(Credits.self, from: response.data) else
-                {
-                    print("Credits were't decoded correctly")
-                    return
-                }
+                let json = JSON(response.data)
+                let id = json["id"].intValue
+                var cast = [(String, String, String)]()
+                json["cast"].array?.forEach({ (member) in
+                    let character = member["character"].stringValue
+                    let name = member["name"].stringValue
+                    let profilePath = member["profile_path"].stringValue
+//                    let pathWithoutSlash = retr
+                    let trifecta = (character, name, profilePath)
+                    cast.append(trifecta)
+                })
                 
-                self.cast = creditDetails.cast.map { CharacterViewModel(character: $0) }
-                self.crew = creditDetails.crew.map { CrewmanViewModel(crewman: $0) }
+                var crew = [(String, String)]()
+                json["crew"].array?.forEach({ (member) in
+                    let name = member["name"].stringValue
+                    let job = member["job"].stringValue
+                    let duet = (name, job)
+                    crew.append(duet)
+                })
+                
+                let credits = Credits.init(id: id, cast: cast, crew: crew)
+                
+                let creditDetailsvm = CreditDetailViewModel(credit: credits)
+                completion(creditDetailsvm)
                 
             case .failure(let error):
                 print("There was an issue: \(error.localizedDescription)")
@@ -82,6 +120,8 @@ class MovieViewModel {
         let endpoint = String(posterUrl[index...])
         return endpoint
     }
+    
+
     
     
 }

@@ -9,9 +9,11 @@
 import Foundation
 
 class MovieDetailsViewModel {
+    var id: Int?
     var budget: Int?
-    var genres: [Genre]?
-    var productionCompanies: [Production]?
+    var genres: [String]?
+    var productionCompanies: [String]?
+    var productionCountries: [String]?
     var revenue: Int?
     var runtime: Int?
     
@@ -19,6 +21,7 @@ class MovieDetailsViewModel {
         self.budget = details.budget
         self.genres = details.genres
         self.productionCompanies = details.productionCompanies
+        self.productionCountries = details.productionCountries
         self.revenue = details.revenue
         self.runtime = details.runtime
     }

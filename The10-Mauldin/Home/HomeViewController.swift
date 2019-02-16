@@ -14,6 +14,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var MovieCategoryCollection: UICollectionView!
     private var cellID = "MovieCollectionViewCell"
     
+    //MARK: Datasource for Upcoming movies
+    /* First element in this array will provide the path to an image
+     poster for the first cell */
     var upcomingMovies: [MovieViewModel] = [] {
         didSet {
             guard let firstMovie = upcomingMovies.first else {
@@ -24,9 +27,12 @@ class HomeViewController: UIViewController {
             MovieCategoryCollection.reloadData()
         }
     }
-    
+    //MARK: Initialized by the first element in array above
     var firstUpcomingMovie: MovieViewModel?
     
+    //MARK: Datasource for Now Playing movies
+    /* First element in this array will provide the path to an image
+     poster for the first cell */
     var nowPlayingMovies: [MovieViewModel] = [] {
         didSet {
             guard let firstMovie = nowPlayingMovies.first else {
@@ -37,14 +43,22 @@ class HomeViewController: UIViewController {
             MovieCategoryCollection.reloadData()
         }
     }
-    
+    //MARK: Initialized by the first element in array above
     var firstNowPlayingMovie: MovieViewModel?
     
+    //MARK: Sets delegate and datasource of collection view
     func setUpDelegatesAndDatasources() {
         MovieCategoryCollection.delegate = self
         MovieCategoryCollection.dataSource = self
         MovieCategoryCollection.register(UINib(nibName: cellID, bundle: nil),
                                          forCellWithReuseIdentifier: cellID)
+    }
+    
+    //MARK: Indexpath used to retrieve cell that was tapped
+    var cellPath: IndexPath? {
+        didSet {
+            performSegue(withIdentifier: "showCategory", sender: self)
+        }
     }
     
     override func viewDidLoad() {
@@ -53,56 +67,36 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         title = "Discover"
         setUpDelegatesAndDatasources()
-        //MARK: DATA BINDING
+        //MARK: Get request to retrieve upcoming and now playing movies
+        //DATA BINDING: After data is retrieved, it is binded to controller's arrays
         MovieAbstract.retrieveUpcomingMovies { [weak self] (movies) in
             self?.upcomingMovies = movies
         }
-
         MovieAbstract.retrieveNowPlaying { [weak self] (movies) in
             self?.nowPlayingMovies = movies
         }
     }
     
 
-    /*
+    
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
-    
-    func fullPosterPathUrl(endpoint: String) -> URL {
-        let urlString = "https://image.tmdb.org/t/p/w500/\(endpoint)?api_key=511e8d6a464bdf417dcd230a80eeb38b"
-        return URL(string: urlString)!
-    }
-    
-    func downloadAndCacheImages(image: ImageView, url: URL) {
-        let processor = DownsamplingImageProcessor(size: image.frame.size)
-            >> RoundCornerImageProcessor(cornerRadius: 20)
-        var newImage = image
-        newImage.kf.indicatorType = .activity
-        newImage.kf.setImage(
-            with: url,
-            placeholder: UIImage(named: "placeholderImage"),
-            options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
-        {
-            result in
-            switch result {
-            case .success(let value):
-                print("Task done for: \(value.source.url?.absoluteString ?? "")")
-            case .failure(let error):
-                print("Job failed: \(error.localizedDescription)")
-            }
+        let controller = segue.destination as! MovieListingsViewController
+        guard let path = cellPath else { return }
+        switch path.row {
+        case 0:
+            controller.upcomingMoviesTransferred = true
+            controller.title = "Upcoming Movies"
+            controller.upcomingMovies = self.upcomingMovies
+        case 1:
+            controller.upcomingMoviesTransferred = false
+            controller.title = "Now Playing"
+            controller.nowPlayingMovies = self.nowPlayingMovies
+        default:
+            return
         }
     }
 
@@ -126,17 +120,17 @@ UICollectionViewDataSource {
         case 0:
             guard let movie = firstUpcomingMovie else { return cell }
             guard let posterPath = movie.retrievePosterPath() else { return cell }
-            let path = fullPosterPathUrl(endpoint: posterPath)
+            let path = TheMovieDBService.fullPosterPathUrl(endpoint: posterPath)
             cell.movieCategoryLabel.text = "See Movies That Are Coming Soon"
             
-            cell.movieImage.kf.setImage(with: path, options: [.transition(.fade(0.3))])
+            cell.movieImage.downloadAndCacheImages(url: path)
             return cell
         case 1:
             guard let movie = firstNowPlayingMovie else { return cell }
             guard let posterPath = movie.retrievePosterPath() else { return cell }
-            let path = fullPosterPathUrl(endpoint: posterPath)
+            let path = TheMovieDBService.fullPosterPathUrl(endpoint: posterPath)
             cell.movieCategoryLabel.text = "See Movies That Are Now Playing"
-            downloadAndCacheImages(image: cell.movieImage, url: path)
+            cell.movieImage.downloadAndCacheImages(url: path)
             return cell
             
         default:
@@ -146,8 +140,9 @@ UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "showCategory", sender: self)
+        //MARK: Initialize cellPath property with the indexpath of
+        //cell the user tapped
+        cellPath = indexPath
     }
     
     
