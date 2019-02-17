@@ -92,7 +92,7 @@ class HomeViewController: UIViewController {
         switch path.row {
         case 0:
             controller.upcomingMoviesTransferred = true
-            controller.title = "Upcoming Movies"
+            controller.title = "Coming Soon"
             controller.upcomingMovies = self.upcomingMovies
         case 1:
             controller.upcomingMoviesTransferred = false

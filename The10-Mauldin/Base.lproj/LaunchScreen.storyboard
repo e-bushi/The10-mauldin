@@ -43,11 +43,11 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edw-ry-Saf">
-                                <rect key="frame" x="65" y="452" width="245.5" height="41"/>
+                                <rect key="frame" x="68" y="452" width="239.5" height="41"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="The-10 Mauldin">
+                                    <fragment content="TheTenMauldin">
                                         <attributes>
-                                            <color key="NSColor" red="0.26965287327766418" green="0.56657356023788452" blue="0.90200328826904297" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="NSColor" red="0.26965287329999998" green="0.56657356020000005" blue="0.90200328829999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <font key="NSFont" size="30" name="AvenirNext-Heavy"/>
                                         </attributes>
                                     </fragment>

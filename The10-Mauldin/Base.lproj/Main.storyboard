@@ -609,9 +609,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfx-IJ-BZD">
-                                <rect key="frame" x="37.5" y="402.5" width="245.5" height="41"/>
+                                <rect key="frame" x="40.5" y="402.5" width="239.5" height="41"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="The-10 Mauldin">
+                                    <fragment content="TheTenMauldin">
                                         <attributes>
                                             <color key="NSColor" red="0.26965287329999998" green="0.56657356020000005" blue="0.90200328829999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <font key="NSFont" size="30" name="AvenirNext-Heavy"/>

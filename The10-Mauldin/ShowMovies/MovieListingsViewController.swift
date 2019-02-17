@@ -157,7 +157,7 @@ class MovieListingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Now Playing"
+//        title = "Now Playing"
         setUpDelegatesDatasourcesAndCell()
         getMovieDetails()
         getCreditData()
