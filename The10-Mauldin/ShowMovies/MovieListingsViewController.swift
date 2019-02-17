@@ -35,7 +35,12 @@ class MovieListingsViewController: UIViewController {
     datasources */
     var upcomingMoviesTransferred: Bool = true
     
+    /*MARK: When movie is tapped, its indexpath is set and stored;
+    after being set we know correct positions of the data we need,
+    to display the right data to user */
     var cellPath: IndexPath = IndexPath(row: 0, section: 0) {
+        /*Attn: we give cellPath initial value, so that elements
+        can be properly set when view loads*/
         didSet {
             switch upcomingMoviesTransferred {
             case true:
@@ -46,6 +51,7 @@ class MovieListingsViewController: UIViewController {
         }
     }
     
+    //MARK: Set Element Data
     func setElementValues(section: Int, which movies: [MovieViewModel]) {
         guard let movieID = movies[section].id else { return }
         let detail = details.first { $0.id == movieID }
@@ -96,6 +102,9 @@ class MovieListingsViewController: UIViewController {
     }
     
     //MARK: Datasource for movie cast and crew collection
+    /*Since this is the last piece of data retrieved we must
+    reload both collection views, so they can have access to the
+    latest data */
     var credits: [CreditDetailViewModel] = [] {
         didSet {
             movieListCollection.reloadData()
@@ -103,7 +112,7 @@ class MovieListingsViewController: UIViewController {
         }
     }
     
-    
+    //MARK: register cells and set delegates and datasources
     func setUpDelegatesDatasourcesAndCell() {
         movieListCollection.delegate = self
         movieListCollection.dataSource = self
@@ -117,6 +126,7 @@ class MovieListingsViewController: UIViewController {
                                      forCellWithReuseIdentifier: castCellID)
     }
     
+    //MARK: Based on flag we fetch upcoming or now playing credit details
     func getCreditData() {
         switch upcomingMoviesTransferred {
         case true:
@@ -135,6 +145,7 @@ class MovieListingsViewController: UIViewController {
         }
     }
     
+    //MARK: Based on flag we fetch upcoming or now playing movie details
     func getMovieDetails() {
         switch upcomingMoviesTransferred {
         case true:
@@ -157,7 +168,6 @@ class MovieListingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        title = "Now Playing"
         setUpDelegatesDatasourcesAndCell()
         getMovieDetails()
         getCreditData()
@@ -206,6 +216,8 @@ UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
         }
     }
     
+    /*MARK: Based on section, we retrieve path contents of a specific
+    movie, and merge it with the image path to create full URL */
     func retrieveFullPosterPathForMovies(section: Int) -> URL? {
         var posterPath: String
         switch upcomingMoviesTransferred {
@@ -225,6 +237,7 @@ UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
         return TheMovieDBService.fullPosterPathUrl(endpoint: posterPath)
     }
     
+    /*MARK: Abstract process of capturing and setting data for cells */
     func intializeCellData(_ cellPath: inout IndexPath,
                            movies: [MovieViewModel],
                            cell: MovieCastCollectionViewCell) -> MovieCastCollectionViewCell {
@@ -259,10 +272,11 @@ UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
             { return movieCell }
             movieCell.movieImageView.downloadAndCacheImages(url: fullPath)
             return movieCell
+            
         case movieCastCollection:
             castCell = collectionView.dequeueReusableCell(withReuseIdentifier: castCellID,
                                         for: indexPath) as! MovieCastCollectionViewCell
-            
+            /*MARK: Check if both datasources have data*/
             if credits.count > 0 && details.count > 0 {
                 switch upcomingMoviesTransferred{
                 case true:
@@ -292,6 +306,8 @@ UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
         
         switch collectionView {
         case movieListCollection:
+            /* MARK: Once a new image in the list is tapped,
+            pass cellpath a new value and reload the cast data */
             cellPath = indexPath
             movieCastCollection.reloadData()
             return
@@ -304,6 +320,8 @@ UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     }
     
+    
+    //MARK: Animate when movie in list is tapped
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? MovieListCollectionViewCell {
             UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1.5, initialSpringVelocity: 3.0, options: [.curveEaseInOut], animations: {

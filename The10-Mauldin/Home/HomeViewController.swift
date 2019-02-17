@@ -120,10 +120,14 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
                                     for: indexPath) as! MovieCollectionViewCell
         switch indexPath.row {
         case 0:
+            //MARK: Retrieve first upcoming movie in datasource
             guard let movie = firstUpcomingMovie else { return cell }
+            //MARK: Retrieve the poster path for movie
             guard let posterPath = movie.retrievePosterPath() else { return cell }
+            //MARK: Combine poster path with image path to get full URL
             let path = TheMovieDBService.fullPosterPathUrl(endpoint: posterPath)
             cell.movieCategoryLabel.text = "See Movies That Are Coming Soon"
+            //MARK: Download and Cashe image
             cell.movieImage.downloadAndCacheImages(url: path)
             return cell
         case 1:
@@ -141,13 +145,14 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        //MARK: Initialize cellPath property with the indexpath of
-        //cell the user tapped
+        /*MARK: Initialize cellPath property with the indexpath of
+        cell the user tapped */
         cellPath = indexPath
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //MARK: Based on size of screen, set appropriate cell size
         return PhoneWidth.movieTypeCellSize()
     }
     
