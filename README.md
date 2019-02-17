@@ -6,10 +6,10 @@
 ![Platform](https://img.shields.io/badge/Carthage-Compatible-green.svg)
 
 
-We grab the first 10 movies from the now playing and upcoming movie categories and display they're data...
+We grab the first 10 movies from the now playing and upcoming movie categories and display their data...
 All the data you see is based on what is held by The Movie Database
 
-![](MovieTheatre.png)
+![](MovieTheatre.jpg)
 >Photo by Erik Witsoe on Unsplash
 
 ## Requirements
@@ -24,11 +24,11 @@ All the data you see is based on what is held by The Movie Database
 
 ## Installation
 
-Run `git clone https://github.com/e-bushi/The10-mauldin.git`
+Run `git clone https://github.com/e-bushi/The10-mauldin.git` from your terminal
 
 ### Carthage
 
-Open terminal, navigate to root of directory and enter  `carthage bootstrap --platform ios` to download dependencies
+While still in the terminal, navigate to root of directory and enter  `carthage bootstrap --platform ios` to download dependencies
 
 
 **The Results, and Alamofire Frameworks are packaged with Moya**
