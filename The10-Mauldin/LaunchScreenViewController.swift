@@ -18,18 +18,18 @@ class LaunchScreenViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.animateLogo()
         }
     }
     
     func animateLogo() {
-        logo.transform = .init(scaleX: 1.5, y: 1.5)
-        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 5.0, options: [.autoreverse, .curveEaseIn], animations: {
+        logo.transform = .init(scaleX: 1.5, y: 2.5)
+        UIView.animate(withDuration: 2.5, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 5.0, options: [.curveEaseInOut], animations: {
             self.logo.transform = .identity
 
         }) { (_) in
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 0.15, animations: {
                 self.projectNameLabel.transform = .init(translationX: 400.0, y: 0)
             }, completion: { (_) in
                 self.performSegue(withIdentifier: "showApp", sender: self)
