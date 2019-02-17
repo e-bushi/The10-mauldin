@@ -17,6 +17,7 @@
 		F66CF8462215C63200FB4FD1 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CF8452215C63200FB4FD1 /* UIImageView+Extension.swift */; };
 		F66CF8482216D81300FB4FD1 /* CreditDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CF8472216D81300FB4FD1 /* CreditDetailsViewModel.swift */; };
 		F66CF84E221848C400FB4FD1 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CF84D221848C400FB4FD1 /* Int+Extension.swift */; };
+		F68E1ACB2219281B00C376F1 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E1ACA2219281B00C376F1 /* LaunchScreenViewController.swift */; };
 		F6CC01B92213A80200062305 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01B82213A80200062305 /* AppDelegate.swift */; };
 		F6CC01BE2213A80200062305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6CC01BC2213A80200062305 /* Main.storyboard */; };
 		F6CC01C12213A80200062305 /* The10_Mauldin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6CC01BF2213A80200062305 /* The10_Mauldin.xcdatamodeld */; };
@@ -71,6 +72,7 @@
 		F66CF8452215C63200FB4FD1 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F66CF8472216D81300FB4FD1 /* CreditDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditDetailsViewModel.swift; sourceTree = "<group>"; };
 		F66CF84D221848C400FB4FD1 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		F68E1ACA2219281B00C376F1 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		F6CC01B52213A80200062305 /* The10-Mauldin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The10-Mauldin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6CC01B82213A80200062305 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6CC01BD2213A80200062305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				F6CC01C42213A80500062305 /* LaunchScreen.storyboard */,
 				F6CC01C72213A80500062305 /* Info.plist */,
 				F6CC01BF2213A80200062305 /* The10_Mauldin.xcdatamodeld */,
+				F68E1ACA2219281B00C376F1 /* LaunchScreenViewController.swift */,
 			);
 			path = "The10-Mauldin";
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F68E1ACB2219281B00C376F1 /* LaunchScreenViewController.swift in Sources */,
 				F6CC01F42213B4DF00062305 /* TheMovieDBService.swift in Sources */,
 				F6CC02062214330B00062305 /* MovieListCollectionViewCell.swift in Sources */,
 				F6CC020222142B6800062305 /* MovieListingsViewController.swift in Sources */,

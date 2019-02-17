@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mYB-xy-M7h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NRf-FH-nZX">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -593,6 +593,72 @@
             </objects>
             <point key="canvasLocation" x="2329.6875" y="133.62676056338029"/>
         </scene>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="D7L-7r-kIP">
+            <objects>
+                <viewController id="NRf-FH-nZX" customClass="LaunchScreenViewController" customModule="The10_Mauldin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uXT-aV-7vP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchMovie" translatesAutoresizingMaskIntoConstraints="NO" id="guC-0w-3aU">
+                                <rect key="frame" x="85" y="219" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="1A8-1g-f0Z"/>
+                                    <constraint firstAttribute="height" constant="150" id="Dp8-NV-ttO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfx-IJ-BZD">
+                                <rect key="frame" x="37.5" y="402.5" width="245.5" height="41"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="The-10 Mauldin">
+                                        <attributes>
+                                            <color key="NSColor" red="0.26965287329999998" green="0.56657356020000005" blue="0.90200328829999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="30" name="AvenirNext-Heavy"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UwT-uh-5Fo">
+                                <rect key="frame" x="63" y="524" width="194" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyrights © E-Bushi Consulting - 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imL-7z-zvX">
+                                        <rect key="frame" x="0.0" y="0.0" width="194" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="0.82066031679999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Rights Reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daQ-XS-pck">
+                                        <rect key="frame" x="50.5" y="12" width="93.5" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="0.82066031679999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="guC-0w-3aU" firstAttribute="centerX" secondItem="zXo-Lz-QTm" secondAttribute="centerX" id="98B-0L-jAX"/>
+                            <constraint firstItem="tfx-IJ-BZD" firstAttribute="centerX" secondItem="guC-0w-3aU" secondAttribute="centerX" id="IP7-YO-Es6"/>
+                            <constraint firstItem="zXo-Lz-QTm" firstAttribute="bottom" secondItem="UwT-uh-5Fo" secondAttribute="bottom" constant="20" id="dVB-Vt-kvZ"/>
+                            <constraint firstItem="guC-0w-3aU" firstAttribute="centerY" secondItem="zXo-Lz-QTm" secondAttribute="centerY" id="heP-xg-Mfc"/>
+                            <constraint firstItem="UwT-uh-5Fo" firstAttribute="centerX" secondItem="guC-0w-3aU" secondAttribute="centerX" id="lq3-gn-idm"/>
+                            <constraint firstItem="tfx-IJ-BZD" firstAttribute="top" secondItem="guC-0w-3aU" secondAttribute="bottom" constant="33.5" id="w39-vd-qRj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zXo-Lz-QTm"/>
+                    </view>
+                    <connections>
+                        <outlet property="logo" destination="guC-0w-3aU" id="kzl-oi-10G"/>
+                        <outlet property="projectNameLabel" destination="tfx-IJ-BZD" id="vya-4c-bMy"/>
+                        <segue destination="mYB-xy-M7h" kind="show" identifier="showApp" id="XEG-CR-oBK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="09A-3J-lux" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1427" y="133"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="bez-oc-bXN">
             <objects>
@@ -621,4 +687,7 @@
             <point key="canvasLocation" x="-332" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launchMovie" width="592" height="401"/>
+    </resources>
 </document>
